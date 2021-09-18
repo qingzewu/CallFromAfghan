@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/message_nav" android:title="@string/message_nav" android:icon="@drawable/ic_message"/>
+    <item android:id="@+id/voicetext_nav" android:title="@string/voicetext_nav" android:icon="@drawable/ic_voice" />
+    <item android:id="@+id/news_nav" android:title="@string/news_nav" android:icon="@drawable/ic_news" />
+    <item android:id="@+id/helper_nav" android:title="@string/help_nav" android:icon="@drawable/ic_helper"/>
+</menu>

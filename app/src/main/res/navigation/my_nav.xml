@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/sms_nav">
+
+    <fragment
+        android:id="@+id/sms_nav"
+        android:name="com.example.callfromafgan.MessageFragment"
+        android:label="fragment_sms"
+        tools:layout="@layout/fragment_sms" />
+    <fragment
+        android:id="@+id/voicetext_nav"
+        android:name="com.example.callfromafgan.VoicetextFragment"
+        android:label="fragment_voicetext"
+        tools:layout="@layout/fragment_voicetext" />
+<!--    <fragment-->
+<!--        android:id="@+id/news_nav"-->
+<!--        android:name="com.example.callfromafgan.NewsFragment"-->
+<!--        android:label="fragment_news"-->
+<!--        tools:layout="@layout/fragment_news" />-->
+    <fragment
+        android:id="@+id/helper_nav"
+        android:name="com.example.callfromafgan.HelperFragment"
+        android:label="fragment_helper"
+        tools:layout="@layout/fragment_helper" />
+</navigation>
