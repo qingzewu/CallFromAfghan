@@ -30,19 +30,19 @@ public class MessageFragment extends Fragment {
 
 //    String personName2 = FamilyInfo2.NAME2.toString();
 //    String personName3 = FamilyInfo3.NAME3.toString();
+//    String personName1 = "Michael";
+//    String personArea1 = "1";
+//    String personPhone1 = "9095519764";
 
-//    String personName1 = FamilyInfo1.NAME1;
-//    String personArea1 = FamilyInfo1.NUMBER1;
-//    String personPhone1 = FamilyInfo1.PHONE1;
-    String personName1 = "Michael";
-    String personArea1 = "1";
-    String personPhone1 = "9095519764";
-    String personName2 = "FamilyInfo2.NAME2";
-    String personArea2 = FamilyInfo2.NUMBER2;
-    String personPhone2 = FamilyInfo2.PHONE2;
-    String personName3 = "FamilyInfo3.NAME3";
-    String personArea3 = FamilyInfo3.NUMBER3;
-    String personPhone3 = FamilyInfo3.PHONE3;
+    String personName1 = FamilyInfo1.getName1;
+    String personArea1 = FamilyInfo1.getArea1;
+    String personPhone1 = FamilyInfo1.getPhone1;
+    String personName2 = FamilyInfo2.getName2;
+    String personArea2 = FamilyInfo2.getArea2;
+    String personPhone2 = FamilyInfo2.getPhone2;
+    String personName3 = FamilyInfo3.getName3;
+    String personArea3 = FamilyInfo3.getArea3;
+    String personPhone3 = FamilyInfo3.getPhone3;
     String selectedItem;
     EditText messageContent;
 
@@ -71,7 +71,6 @@ public class MessageFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 selectedItem = adapterView.getItemAtPosition(i).toString();
-                Toast.makeText(getActivity(),selectedItem, Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -84,14 +83,15 @@ public class MessageFragment extends Fragment {
         sendMessage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-////                boolean good = SMS.sendMessage();
-////                if (good) {
-////                    Toast.makeText(getActivity(),"Message Sent", Toast.LENGTH_LONG).show();
-////                }
-                Twilio.init(accountID, token);
-                PhoneNumber r = new PhoneNumber("+19095519764");
-                PhoneNumber c = new PhoneNumber("+15105887376");
-                Message.creator(r, c, "hello").create();
+//////                boolean good = SMS.sendMessage();
+//////                if (good) {
+//////                    Toast.makeText(getActivity(),"Message Sent", Toast.LENGTH_LONG).show();
+//////                }
+//                Twilio.init(accountID, token);
+//                PhoneNumber r = new PhoneNumber("+19095519764");
+//                PhoneNumber c = new PhoneNumber("+15105887376");
+//                String m = "hello";
+//                Message.creator(r, c, m).create();
 //                try {
 //                    Message.creator(r, c, "hello").create();
 //                }catch(Exception e) {

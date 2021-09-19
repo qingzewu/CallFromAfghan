@@ -12,21 +12,21 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class FamilyInfo1 extends AppCompatActivity {
-    String Name1;
-    String Area1;
-    String Phone1;
+    static String Name1;
+    static String Area1;
+    static String Phone1;
     EditText editTextName1;
     EditText editTextNumber1;
     EditText editTextPhone1;
 
-    public static final String SHARED_PREFS1 = "sharedPrefs1";
+    public static final String SHARED_PREFS1 = "sharedPrefs";
     public static final String NAME1 = "name1";
     public static final String NUMBER1 = "number1";
     public static final String PHONE1 = "phone1";
 
-    private String getName1;
-    private String getArea1;
-    private String getPhone1;
+    static String getName1;
+    static String getArea1;
+    static String getPhone1;
 
 
     @Nullable
@@ -45,7 +45,7 @@ public class FamilyInfo1 extends AppCompatActivity {
                 Name1 = editTextName1.getText().toString();
                 Area1 = editTextNumber1.getText().toString();
                 Phone1 = editTextPhone1.getText().toString();
-                saveData();
+                saveData1();
                 Intent intent = new Intent(FamilyInfo1.this, MainActivity2.class);
                 startActivity(intent);
             }
@@ -58,33 +58,34 @@ public class FamilyInfo1 extends AppCompatActivity {
                 Name1 = editTextName1.getText().toString();
                 Area1 = editTextNumber1.getText().toString();
                 Phone1 = editTextPhone1.getText().toString();
-                saveData();
+                saveData1();
                 Intent intent = new Intent(FamilyInfo1.this, FamilyInfo2.class);
                 startActivity(intent);
             }
         });
-        loadData();
-        updateViews();
-        Toast.makeText(this, getName1, Toast.LENGTH_SHORT).show();
+        loadData1();
+        updateViews1();
+//        Toast.makeText(this, getName1, Toast.LENGTH_SHORT).show();
     }
 
-    public void saveData(){
+    public void saveData1(){
         SharedPreferences sharedPreferences1= getSharedPreferences(SHARED_PREFS1,MODE_PRIVATE);
         SharedPreferences.Editor editor1 = sharedPreferences1.edit();
         editor1.putString(NAME1, Name1);
         editor1.putString(NUMBER1, Area1);
         editor1.putString(PHONE1, Phone1);
-//        Toast.makeText(this, "Data saved", Toast.LENGTH_SHORT).show();
+        editor1.apply();
+//        Toast.makeText(this, NAME1, Toast.LENGTH_SHORT).show();
     }
 
-    public void loadData(){
+    public void loadData1(){
         SharedPreferences sharedPreferences1 = getSharedPreferences(SHARED_PREFS1,MODE_PRIVATE);
         getName1 = sharedPreferences1.getString(NAME1,"");
         getArea1 = sharedPreferences1.getString(NUMBER1, "");
         getPhone1= sharedPreferences1.getString(PHONE1,"");
     }
 
-    public void updateViews(){
+    public void updateViews1(){
         editTextName1.setText(getName1);
         editTextNumber1.setText(getArea1);
         editTextPhone1.setText(getPhone1);

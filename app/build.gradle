@@ -8,8 +8,8 @@ android {
 
     defaultConfig {
         applicationId "com.example.callfromafgan"
-        minSdk 23
-        targetSdk 31
+        minSdk 21
+        targetSdk 29
         versionCode 1
         versionName "1.0"
 
@@ -18,6 +18,10 @@ android {
             useSupportLibrary true
         }
     }
+    //useLibrary  'org.apache.http.legacy'
+    /*android{
+        useLibrary  'org.apache.http.legacy'
+    }*/
 
     buildTypes {
         release {
@@ -43,9 +47,12 @@ android {
     }
     packagingOptions {
         resources {
-            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+            //excludes += '/META-INF/{AL2.0,LGPL2.1}'
+            excludes += '/META-INF/DEPENDENCIES'
         }
     }
+    compileSdkVersion 31
+    buildToolsVersion '30.0.2'
 }
 
 dependencies {
@@ -65,8 +72,12 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation files('lib/twilio-8.9.0-jar-with-dependencies.jar')
-    implementation files('lib/slf4j-nop-1.7.9.jar')
+
+    implementation 'com.twilio.sdk:twilio:8.19.1'
+
+
+
+    //implementation 'net.sourceforge.htmlunit:htmlunit:2.15'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
