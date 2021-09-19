@@ -46,9 +46,9 @@ public class MessageFragment extends Fragment {
     String selectedItem;
     EditText messageContent;
 
-    public String accountID = "AC4e6ac5bdb2387a46a519eae970555280";
-    public String token = "268de49f1bd275e76a42900cd4237e04";
-    public String caller = "+15105887376";
+//    public static final String accountID = "AC4e6ac5bdb2387a46a519eae970555280";
+//    public static final String token = "268de49f1bd275e76a42900cd4237e04";
+//    public static final String caller = "+15105887376";
 
     @Nullable
     @Override
@@ -83,37 +83,12 @@ public class MessageFragment extends Fragment {
         sendMessage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//////                boolean good = SMS.sendMessage();
-//////                if (good) {
-//////                    Toast.makeText(getActivity(),"Message Sent", Toast.LENGTH_LONG).show();
-//////                }
-//                Twilio.init(accountID, token);
-//                PhoneNumber r = new PhoneNumber("+19095519764");
-//                PhoneNumber c = new PhoneNumber("+15105887376");
-//                String m = "hello";
-//                Message.creator(r, c, m).create();
-//                try {
-//                    Message.creator(r, c, "hello").create();
-//                }catch(Exception e) {
-//                    Toast.makeText(getActivity(),"Exception!", Toast.LENGTH_LONG).show();
-//                }
-
-//                if (true) {
-//                    Twilio.init(accountID, token);
-//                    PhoneNumber r = new PhoneNumber("+19095519764");
-//                    PhoneNumber c = new PhoneNumber(caller);
-//                    try {
-//                        Message.creator(r, c, "hello").create();
-//                    }catch(Exception e) {
-//                        Toast.makeText(getActivity(),"Exception!", Toast.LENGTH_LONG).show();
+//                    boolean good = SMS.sendMessage("+19095519764", "hello", true);
+//                    if(!good) {
+//                        Toast.makeText(getActivity(),"ERROR! ", Toast.LENGTH_LONG).show();
+//                    } else {
+//                        Toast.makeText(getActivity(),"SUCCESS! ", Toast.LENGTH_LONG).show();
 //                    }
-//
-//                    //boolean good = sendMessage("+19095519764", "hello", true);
-////                    if(!good) {
-////                        Toast.makeText(getActivity(),"ERROR! ", Toast.LENGTH_LONG).show();
-////                    } else {
-////                        Toast.makeText(getActivity(),"SUCCESS! ", Toast.LENGTH_LONG).show();
-////                    }
 //                } else if (selectedItem.equals(personName2)) {
 //                    //sendMessage("+" + personArea2 + personPhone2, messageContent.getText().toString(), true);
 //                } else if (selectedItem.equals(personName3)) {
