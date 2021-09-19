@@ -6,9 +6,49 @@
     tools:context=".VoicetextFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
+    <EditText
+        android:id="@+id/editVoicetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="30dp"
+        android:ems="20"
+        android:gravity="start|top"
+        android:hint="@string/text_somthing"
+        android:inputType="textUri|textShortMessage|textLongMessage|textMultiLine"
+        android:minHeight="48dp"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/textViewVoicetextTo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinnerVoicetextTo"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="370dp"
+        android:layout_marginEnd="30dp"
+        android:text="Send the voice text to:" />
+
+    <Spinner
+        android:id="@+id/spinnerVoicetextTo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editVoicetext"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginEnd="80dp"
+        android:minHeight="48dp"
+        android:theme="@style/Platform.MaterialComponents.Light"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/voicetextSendButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginEnd="30dp"
+        android:text="Send" />
 </FrameLayout>

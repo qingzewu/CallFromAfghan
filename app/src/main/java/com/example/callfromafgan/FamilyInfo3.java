@@ -18,10 +18,10 @@ public class FamilyInfo3 extends AppCompatActivity {
     EditText editTextNumber3;
     EditText editTextPhone3;
 
-    public static final String SHARED_PREFS3 = "sharedPrefs";
-    public static final String NAME3 = "name";
-    public static final String NUMBER3 = "number";
-    public static final String PHONE3 = "phone";
+    public static final String SHARED_PREFS3 = "sharedPrefs3";
+    public static final String NAME3 = "name3";
+    public static final String NUMBER3 = "number3";
+    public static final String PHONE3 = "phone3";
 
     private String getName3;
     private String getArea3;
@@ -41,24 +41,27 @@ public class FamilyInfo3 extends AppCompatActivity {
                 Name3 = editTextName3.getText().toString();
                 Area3 = (editTextNumber3.getText().toString());
                 Phone3 =(editTextPhone3.getText().toString());
+                saveData();
                 Intent intent = new Intent(FamilyInfo3.this, MainActivity2.class);
                 startActivity(intent);
             }
         });
+        loadData();
+        updateViews();
     }
     public void saveData(){
-        SharedPreferences sharedPreferences= getSharedPreferences(SHARED_PREFS3,MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(NAME3,Name3);
-        editor.putString(NUMBER3, Area3);
-        editor.putString(PHONE3, Phone3);
+        SharedPreferences sharedPreferences3= getSharedPreferences(SHARED_PREFS3,MODE_PRIVATE);
+        SharedPreferences.Editor editor3 = sharedPreferences3.edit();
+        editor3.putString(NAME3,Name3);
+        editor3.putString(NUMBER3, Area3);
+        editor3.putString(PHONE3, Phone3);
     }
 
     public void loadData(){
-        SharedPreferences sharedPreferences= getSharedPreferences(SHARED_PREFS3,MODE_PRIVATE);
-        getName3 = sharedPreferences.getString(NAME3,"");
-        getArea3 = sharedPreferences.getString(NUMBER3, "");
-        getPhone3= sharedPreferences.getString(PHONE3,"");
+        SharedPreferences sharedPreferences3= getSharedPreferences(SHARED_PREFS3,MODE_PRIVATE);
+        getName3 = sharedPreferences3.getString(NAME3,"");
+        getArea3 = sharedPreferences3.getString(NUMBER3, "");
+        getPhone3= sharedPreferences3.getString(PHONE3,"");
     }
 
     public void updateViews(){

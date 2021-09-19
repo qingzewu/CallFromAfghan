@@ -18,10 +18,10 @@ public class FamilyInfo2 extends AppCompatActivity {
     EditText editTextNumber2;
     EditText editTextPhone2;
 
-    public static final String SHARED_PREFS2 = "sharedPrefs";
-    public static final String NAME2 = "name";
-    public static final String NUMBER2 = "number";
-    public static final String PHONE2 = "phone";
+    public static final String SHARED_PREFS2 = "sharedPrefs2";
+    public static final String NAME2 = "name2";
+    public static final String NUMBER2 = "number2";
+    public static final String PHONE2 = "phone2";
 
     private String getName2;
     private String getArea2;
@@ -41,6 +41,7 @@ public class FamilyInfo2 extends AppCompatActivity {
                 Name2 = editTextName2.getText().toString();
                 Area2 = (editTextNumber2.getText().toString());
                 Phone2= (editTextPhone2.getText().toString());
+                saveData();
                 Intent intent = new Intent(FamilyInfo2.this, MainActivity2.class);
                 startActivity(intent);
             }
@@ -52,24 +53,27 @@ public class FamilyInfo2 extends AppCompatActivity {
                 Name2 = editTextName2.getText().toString();
                 Area2 = (editTextNumber2.getText().toString());
                 Phone2 = (editTextPhone2.getText().toString());
+                saveData();
                 Intent intent = new Intent(FamilyInfo2.this, FamilyInfo3.class);
                 startActivity(intent);
             }
         });
+        loadData();
+        updateViews();
     }
     public void saveData(){
-        SharedPreferences sharedPreferences= getSharedPreferences(SHARED_PREFS2,MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(NAME2,Name2);
-        editor.putString(NUMBER2, Area2);
-        editor.putString(PHONE2, Phone2);
+        SharedPreferences sharedPreferences2= getSharedPreferences(SHARED_PREFS2,MODE_PRIVATE);
+        SharedPreferences.Editor editor2 = sharedPreferences2.edit();
+        editor2.putString(NAME2,Name2);
+        editor2.putString(NUMBER2, Area2);
+        editor2.putString(PHONE2, Phone2);
     }
 
     public void loadData(){
-        SharedPreferences sharedPreferences= getSharedPreferences(SHARED_PREFS2,MODE_PRIVATE);
-        getName2 = sharedPreferences.getString(NAME2,"");
-        getArea2 = sharedPreferences.getString(NUMBER2, "");
-        getPhone2= sharedPreferences.getString(PHONE2,"");
+        SharedPreferences sharedPreferences2= getSharedPreferences(SHARED_PREFS2,MODE_PRIVATE);
+        getName2 = sharedPreferences2.getString(NAME2,"");
+        getArea2 = sharedPreferences2.getString(NUMBER2, "");
+        getPhone2= sharedPreferences2.getString(PHONE2,"");
     }
 
     public void updateViews(){

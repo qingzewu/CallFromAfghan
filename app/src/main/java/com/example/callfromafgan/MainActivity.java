@@ -10,6 +10,7 @@ import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     String myName;
@@ -44,31 +45,38 @@ public class MainActivity extends AppCompatActivity {
                 myName = editTextMyName.getText().toString();
                 myArea = editTextMyNumber.getText().toString();
                 myPhone =editTextMyPhone.getText().toString();
+                saveData();
                 Intent intent = new Intent(MainActivity.this, FamilyInfo1.class);
                 startActivity(intent);
             }
         });
+        loadData();
+        updateViews();
+        Toast.makeText(this, "Data updated", Toast.LENGTH_SHORT).show();
     }
 
     public void saveData(){
-        SharedPreferences sharedPreferences= getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
+        SharedPreferences sharedPreferences0= getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences0.edit();
         editor.putString(MYNAME,myName);
         editor.putString(MYNUMBER, myArea);
         editor.putString(MYPHONE, myPhone);
+        editor.apply();
+//        Toast.makeText(this, "Data saved", Toast.LENGTH_SHORT).show();
     }
 
     public void loadData(){
-        SharedPreferences sharedPreferences= getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
-        getMyName = sharedPreferences.getString(MYNAME,"");
-        getMyArea = sharedPreferences.getString(MYNUMBER, "");
-        getMyPhone= sharedPreferences.getString(MYPHONE,"");
+        SharedPreferences sharedPreferences0= getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+        getMyName = sharedPreferences0.getString(MYNAME,"");
+        getMyArea = sharedPreferences0.getString(MYNUMBER, "");
+        getMyPhone= sharedPreferences0.getString(MYPHONE,"");
     }
 
     public void updateViews(){
         editTextMyName.setText(getMyName);
         editTextMyNumber.setText(getMyArea);
         editTextMyPhone.setText(getMyPhone);
+
     }
 
 
